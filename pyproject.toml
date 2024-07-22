@@ -5,7 +5,9 @@ description = "A simple introduction to FastAPI"
 authors = [
     {name = "refactorartist", email = "thefattman@refactorart.ist"},
 ]
-dependencies = []
+dependencies = [
+    "fastapi>=0.111.1",
+]
 requires-python = ">=3.12"
 readme = "README.md"
 license = {text = "MIT"}
