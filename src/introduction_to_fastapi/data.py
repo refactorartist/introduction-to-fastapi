@@ -1,5 +1,6 @@
-from introduction_to_fastapi.models import Item, ItemCreate, ItemReplace, ItemUpdate
 from uuid import UUID
+
+from introduction_to_fastapi.models import Item, ItemCreate, ItemReplace, ItemUpdate
 
 
 class ItemRepository:
