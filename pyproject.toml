@@ -28,6 +28,6 @@ dev = [
 
 
 [tool.pdm.scripts]
-start = "uvicorn main:app --reload"
+start = "uvicorn introduction_to_fastapi.main:app --reload"
 lint = "ruff check --fix"
 typecheck = "mypy --strict ."
