@@ -31,3 +31,18 @@ dev = [
 start = "uvicorn introduction_to_fastapi.main:app --reload"
 lint = "ruff check --fix"
 typecheck = "mypy --strict ."
+
+
+[tool.ruff]
+line-length = 120
+
+[tool.ruff.lint]
+extend-select = [
+    "I",
+    "B",
+    "C4",
+    "PGH",
+    "RUF",
+    "W",
+    "YTT",
+]
