@@ -1,5 +1,6 @@
 from decimal import Decimal
 from uuid import UUID, uuid4
+
 from pydantic import BaseModel, Field
 
 
@@ -13,7 +14,7 @@ class Item(BaseModel):
 class ItemUpdate(BaseModel):
     name: str | None = None  # You can also use Optional[str]
     description: str | None = None  # You can also use Optional[str]
-    price: Decimal | None = Field(None, gt=0, decimal_places=2)  # This will ensure that the price is greater than 0 with 2 decimal places, otherwise it will be none 
+    price: Decimal | None = Field(None, gt=0, decimal_places=2)  # This will ensure that the price is greater than 0 with 2 decimal places, otherwise it will be none
 
 
 class ItemCreate(BaseModel):
