@@ -1,7 +1,9 @@
 from typing import Any
 from uuid import UUID
+
 from fastapi import FastAPI, HTTPException, status
 
+from introduction_to_fastapi.data import item_repository
 from introduction_to_fastapi.models import (
     Item,
     ItemCreate,
@@ -10,7 +12,6 @@ from introduction_to_fastapi.models import (
     ItemResponse,
     ItemUpdate,
 )
-from introduction_to_fastapi.data import item_repository
 
 app = FastAPI(
     title="Introduction to FastAPI",
@@ -64,7 +65,7 @@ def update_item(id: UUID, item_update: ItemUpdate) -> Item:
         raise HTTPException(
             status_code=status.HTTP_404_NOT_FOUND, detail="Item not found"
         )
-    
+
     return item
 
 @app.delete("/items/{id}", status_code=status.HTTP_204_NO_CONTENT)
