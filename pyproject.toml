@@ -25,3 +25,9 @@ dev = [
     "ruff>=0.5.4",
     "mypy>=1.11.0",
 ]
+
+
+[tool.pdm.scripts]
+start = "uvicorn main:app --reload"
+lint = "ruff check --fix"
+typecheck = "mypy --strict ."
