@@ -80,11 +80,13 @@ class ItemRepository:
         # Update the `item` with the new values
         # This will only update the values that have been set in the `item_update` object
 
-        self.items[id] = item.model_copy(  # Copy the item with the updated values
+        item = item.model_copy(  # Copy the item with the updated values
             update=item_update.model_dump(  # Dump the update values
                 exclude_unset=True  # Exclude any value which does not have a value
             )
         )
+
+        self.items[id] = item
 
         return item
 
